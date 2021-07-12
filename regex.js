@@ -13,25 +13,8 @@ var res = patt.test(str)
 
 console.log('hello world');
 
-const validatePIN = pin => {
-    // const patt = new RegExp("[0-9]{4,4}")
-    // const patt = new RegExp('[\d\d\d\d]||[\d\d\d\d\d\d]')
-    // const pattern = /\d/
-    const patt = /^[0-9]{4}$|^[0-9]{6}$/
-    const res = patt.test(pin)
-    return res 
-}
-
-// console.log( validatePIN('1234') );
-// console.log( validatePIN('123456') );
-// console.log( validatePIN('12') );
-// console.log( validatePIN('1') );
-// console.log( validatePIN('a122') );
-// console.log( validatePIN('122222222cxcvd') );
-
-// var patt = /^[0-2]([0-5]?[0-9]?)\.[0-2][0-5]?[0-9]?\.[0-2][0-5]?[0-9]?\.[0-2][0-5]?[0-9]?$/
-
-
+////////////////// disemvowel (removes aieuo) //////////////////
+/*
 var disemvowel = function(str) {
     var newString = str
     var patt = /[auieo]/
@@ -43,18 +26,56 @@ var disemvowel = function(str) {
     }
     return newString;
 }
-
-// const disemvowel = (str) => {
-//     let newString = str
-//     let patt = /[auieo]/
-//     for( let i = 0 ; i<str.length ; i++  ){
-//       if(patt.test(str[i])){
-//         // newString.slice(i, i+1)
-//         newString = newString.replace(str[i], '')
-//         // newString.slice(i, i+1)
-//       }
-//     }
-//     return newString;
-// }
-
 console.log(disemvowel("This website is for losers LOL!"));
+
+*/
+////////////////////////////////////////////////////
+
+
+
+////////////////// Match E-mail //////////////////
+// let checkEmail = str =>  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(str)
+/*
+
+var checkEmail = function(str) {
+    var patt = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var result = patt.test(str)
+    return result;
+}
+
+// var input  = prompt('Test')
+
+// console.log(checkEmail());
+ */
+////////////////////////////////////////////////////
+
+
+////////////////// Regexp Basics - is it IPv4 address? //////////////////
+// Implement String#ipv4_address?, 
+// which should return true if given object is an IPv4 address 
+// - four numbers (0-255) separated by dots.
+// It should only accept addresses in canonical representation, 
+// so no leading 0s, spaces etc.
+
+var checkIp = function (ip) {
+    return /^(?!.*\.$)((1?\d?\d|25[0-5]|2[0-4]\d)(\.|$)){4}$/.test(ip)
+}
+
+console.log(checkIp(""), false);
+console.log(checkIp("127.0.0.1"), true);
+console.log(checkIp("0.0.0.0"), true);
+console.log(checkIp("255.255.255.255"), true);
+console.log(checkIp("10.20.30.40"), true);
+console.log(checkIp("10.256.30.40"), false);
+// console.log(checkIp(""), false);
+// console.log(checkIp("127"), true);
+// console.log(checkIp("0"), true);
+// console.log(checkIp("255"), true);
+// console.log(checkIp("10"), true);
+// console.log(checkIp("39"), true);
+// console.log(checkIp("149"), true);
+// console.log(checkIp("10.256.30.40"), false);
+// console.log(checkIp());
+// console.log(checkIp());
+
+////////////////////////////////////////////////////
