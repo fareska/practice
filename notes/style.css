@@ -1,0 +1,35 @@
+.section {
+    margin: 20px 0px;
+    color: black;
+}
+
+#header {
+    text-align: center;
+}
+
+.note {
+    background-image: url('./images/note.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: overlay;
+    padding-left: 15px;
+    /* width: 500px;
+    height: 'auto'; */
+    
+}
+
+
+
+/* #notesContainer{
+    display: flex;
+} */
+
+body {
+    background-image: url('./images/background.jpg');
+
+}
+
+.message {
+    color: red;
+    background-color: white;
+}

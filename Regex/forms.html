@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+
+    <h1>My Form</h1>
+
+    <form method="GET" action="https://www.google.com/search">
+        <div>
+            <label for="name">Your name:</label>
+            <input name="q" id="name" type="text" placeholder="Enter your name" 
+            required
+            />    
+        </div>
+
+        <div>
+            <label for="tel">Your phone:</label>  
+            <input id="tel" name="tel" type="tel" required >
+            <input type="button" value="click me"/>
+            <input type="color" name="" id="">
+            <input type="date" name="" id="">
+            <input type="time" name="" id="">
+
+            <input type="file" name="" id="">
+        </div>
+
+        <div>
+            <label for="email">Your email:</label>  
+            <input id="email" name="email" type="email" title="bad email !!!" required >
+        </div>
+        
+        <!-- textarea -->
+        <textarea name="manytext" id="" cols="20" rows="10"></textarea>
+
+        <!-- selectlist -->
+        <label for="cars">Choose your car</label>
+        <select name="cars" id="cars" required multiple>
+            <option selected></option>
+            <option value="volv">Volvo</option>
+            <option value="ford">Ford</option>
+            <option>BMW</option>
+            <option>Nissan</option>
+        </select>
+        
+        <!-- autocomplete -->
+        <input list="browsers">
+        <datalist id="browsers">
+            <option value="Internet Explorer"></option>
+            <option value="Firefox"></option>
+            <option value="Chrome"></option>
+            <option value="Safari"></option>
+            <option value="Edge"></option>
+        </datalist>
+
+
+        
+        <!-- hidden -->
+        <input type="hidden" name="secret" value="secret word">
+
+        <!-- password -->
+        <div>
+            <label for="password">Your password:</label>  
+            <input id="password" name="password" type="password" title="bad password !!!" required >
+        </div>
+        
+
+        <!-- radio -->
+        <h2>Choose your gender</h2>
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="other" value="other">
+        <label for="other">Other</label>
+
+        <!-- checkboxs -->
+        <h2>Choose your method to get to work</h2>
+        <input type="checkbox" name="vehicle1" id="vehicle1" value="sadasd">
+        <label for="vehicle1">Bike</label>
+        <input type="checkbox" name="vehicle2" id="vehicle2" value="Car">
+        <label for="vehicle2">Car</label>
+        <input type="checkbox" name="vehicle3" id="vehicle3" value="Boat">
+        <label for="vehicle3">Boat</label>
+
+        <div>
+            <button><strong>Confirm</strong></button>
+            <input type="reset" value="Clear">    
+        </div>
+        <!-- submit/button -->
+        
+    </form>
+    <!-- <button><strong>Thina</strong></button> -->
+
+    
+</body>
+</html>

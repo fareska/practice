@@ -1,4 +1,4 @@
-
+/*
 var str = "Coding is the best things in life"
 var str1 = "coding is thE best things in life"
 
@@ -12,7 +12,7 @@ var res = patt.test(str)
 // console.log(res);
 
 console.log('hello world');
-
+*/
 ////////////////// disemvowel (removes aieuo) //////////////////
 /*
 var disemvowel = function(str) {
@@ -57,17 +57,17 @@ var checkEmail = function(str) {
 // It should only accept addresses in canonical representation, 
 // so no leading 0s, spaces etc.
 
-var checkIp = function (ip) {
-    return /^(?!.*\.$)((1?\d?\d|25[0-5]|2[0-4]\d)(\.|$)){4}$/.test(ip)
-}
+// var checkIp = function (ip) {
+//     return /^(?!.*\.$)((1?\d?\d|25[0-5]|2[0-4]\d)(\.|$)){4}$/.test(ip)
+// }
 
-console.log(checkIp(""), false);
-console.log(checkIp("127.0.0.1"), true);
-console.log(checkIp("0.0.0.0"), true);
-console.log(checkIp("255.255.255.255"), true);
-console.log(checkIp("10.20.30.40"), true);
-console.log(checkIp("10.256.30.40"), false);
 // console.log(checkIp(""), false);
+// console.log(checkIp("127.0.0.1"), true);
+// console.log(checkIp("0.0.0.0"), true);
+// console.log(checkIp("255.255.255.255"), true);
+// console.log(checkIp("10.20.30.40"), true);
+// console.log(checkIp("10.256.30.40"), false);
+// // console.log(checkIp(""), false);
 // console.log(checkIp("127"), true);
 // console.log(checkIp("0"), true);
 // console.log(checkIp("255"), true);
@@ -79,3 +79,26 @@ console.log(checkIp("10.256.30.40"), false);
 // console.log(checkIp());
 
 ////////////////////////////////////////////////////
+
+
+// var toCamelCase =function (str) {
+
+//     for (var i = 0; i < str.length; i++) {
+//         if (str[i] === '-' || str[i] === '_') {
+//             str = str.replace(str[i], '').replace(str[i+1], str[i+1].toUpperCase());
+
+//         }
+//     }
+//     return str;
+// }
+
+var toCamelCase =function (str) {
+    var patt = /[-_](.)/g
+    str = str.replace(patt, function(match){
+       return match.charAt(1).toUpperCase();
+    })
+    return str;
+}
+
+console.log(toCamelCase('The-code-is-amazing'));
+console.log(toCamelCase('the-code-is-amazing'));
